@@ -3,13 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Employment Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Employment Form</h1>
+    <div class="ontainer">
+        <form id="employment-form">
+            <h1>Employment Form</h1>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Jan" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Kowalski" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="jk@gamil.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="505 505 505" pattern="\d{3} \d{3} \d{3}" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of birth</label>
+                    <input type="date" id="dob" name="dob" max="" required>
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <legend>What are you looking for</legend>
+                <div class="radio-group">
+                    <label><input type="radio" name="position" value="Software Engineer" required> Software Engineer</label>
+                    <label><input type="radio" name="position" value="UX Designer" required> UX Designer</label>
+                    <label><input type="radio" name="position" value="Analytics Specialist" required> Analytics Specialist</label>
+                    <label><input type="radio" name="position" value="Project Manager" required> Project Manager</label>
+                </div>
+                
+
+                <legend>Which programming languages do you know?</legend>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="language" value="Java"> Java</label>
+                    <label><input type="checkbox" name="language" value="Javascript"> Javascript</label>
+                    <label><input type="checkbox" name="language" value="C#"> C#</label>
+                    <label><input type="checkbox" name="language" value="Kotlin"> Kotlin</label>
+                    <label><input type="checkbox" name="language" value="Python"> Python</label>
+                    <label><input type="checkbox" name="language" value="Scala"> Scala</label>
+                </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Type your message"></textarea>
+            </div>
+
+            <div class="buttons">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
-    
+
+    <script>
+        const today = new Date().toISOString().split("T")[0];
+        document.getElementById("dob").setAttribute("max", today);
+    </script>
 </body>
 </html>
