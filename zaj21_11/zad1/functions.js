@@ -1,23 +1,9 @@
 function isOdd(x)
 {
-    if(x%2==0)
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
+   return (x%2===1);
 }
 
 function isEven(x)
 {
-    if(x%2==0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return (x%2===0);
 }
