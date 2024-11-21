@@ -21,5 +21,3 @@ function isEven(x)
         return false;
     }
 }
-
-console.log(isEven(5));
